@@ -82,12 +82,12 @@ int main() {
 		printf("---------------------------\n\n");
 
 		if (attempts == 0) {
-			printf("You lost. The secret word are: \"%s\".\n", word);
+			printf("You lost. The secret word are: \"%s\".\n\n", word);
 			break;
 		}
 
 		if (strings_are_equal_i(word, enc_word)) {
-			printf("Congratulations! You won with %i attempts remaining.\n", attempts);
+			printf("Congratulations! You won with %i attempts remaining.\n\n", attempts);
 			break;
 		}
 	}
