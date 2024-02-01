@@ -3,11 +3,13 @@
 #include <ctype.h>
 #include <string.h>
 
+char *getRandomWord(char* nomeArquivo);
+
 int in_str_i(char *haystack, char needle) {
 	for (int i = 0; haystack[i] != '\0'; ++i) {
 		if (tolower(haystack[i]) == tolower(needle)) {
 			return 1;
-		} 
+		}
 	}
 
 	return 0;
@@ -21,7 +23,7 @@ void replace_str(char *str1, char *str2, char letter) {
 	}
 }
 
-char *copy_string_encoded(char *str) {
+char *copy_string_encoded(const char *str) {
 	size_t len = strlen(str);
 	char *encoded = (char *)malloc(len + 1);
 
@@ -48,7 +50,7 @@ int strings_are_equal_i(char *str1, char *str2) {
 }
 
 int main() {
-	char word[] = "hangman";
+	char *word = getRandomWord("words.txt");
 	char *enc_word = copy_string_encoded(word);
 	int attempts = 5;
 	char letter;
@@ -90,5 +92,8 @@ int main() {
 		}
 	}
 
+	free(enc_word);
+	free(word);
+	
 	return 0;
 }
