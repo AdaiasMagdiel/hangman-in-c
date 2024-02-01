@@ -15,7 +15,7 @@ git clone https://github.com/AdaiasMagdiel/hangman-in-c.git
 To compile the program, use the following command:
 
 ```bash
-gcc -o main main.c
+gcc -o hangman word.c main.c
 ```
 
 ## How to Run
@@ -23,18 +23,18 @@ gcc -o main main.c
 After compilation, you can run the program using:
 
 ```bash
-./main
+./hangman
 ```
 
 On Windows:
 
 ```bash
-main.exe
+hangman.exe
 ```
 
-## Changing the Hidden Word
+## Adding More Words
 
-To change the hidden word, simply modify the `word` variable in the `main.c` file.
+You can add more words in `words.txt`. The program read this file and choose a random word to play.
 
 ## License
 
